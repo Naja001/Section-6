@@ -33,8 +33,8 @@ export default function AuthInputs() {
   const labelStyle = `label ${emailNotValid ? "invalid" : undefined}`;
 
   return (
-    <div id="auth-inputs">
-      <ControlContainer>
+    <div id="auth-inputs" className="w-full mx-auto max-w-sm p-8 rounded shadow-md bg-gradient-to-b from-stone-700 to-stone-800">
+      <div className="flex flex-col gap-2 mb-6">
         <Input
           label="Email"
           invalid={emailNotValid}
@@ -50,12 +50,12 @@ export default function AuthInputs() {
             handleInputChange("password", event.target.value)
           }
         />
-      </ControlContainer>
-      <div className="actions">
-        <button type="button" className="text-button">
+      </div>
+      <div className="flex justify-end gap-4">
+        <button type="button" className="text-amber-400 hover:text-amber-500">
           Create a new account
         </button>
-        <Button className="button" onClick={handleLogin}>
+        <Button  onClick={handleLogin}>
           Sign In
         </Button>
       </div>
